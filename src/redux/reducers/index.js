@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { authReducer } from './authReducers';
+import { errorReducer } from './errorReducer';
 import { feedReducer } from './feedReducers';
 
 /**
@@ -10,4 +11,5 @@ import { feedReducer } from './feedReducers';
 export default combineReducers({
 	auth: authReducer,
 	feed: feedReducer,
+	error: errorReducer,
 });

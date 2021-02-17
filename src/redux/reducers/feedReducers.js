@@ -1,9 +1,10 @@
-import { UPDATE_BLOGS, UPDATE_SEARCH_INPUT } from '../types/authTypes';
+import { SEARCH_BLOGS, UPDATE_BLOGS } from '../types/feedTypes';
 
 // Feed Store
 const initialState = {
 	searchInput: 'farmer',
-	blogs: null,
+	loading: true,
+	news: null,
 };
 
 /**
@@ -15,14 +16,16 @@ const initialState = {
  */
 export const feedReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case UPDATE_SEARCH_INPUT:
+		case SEARCH_BLOGS:
 			return {
 				...state,
 				searchInput: action.payload,
+				loading: true,
 			};
 		case UPDATE_BLOGS:
 			return {
 				...state,
+				loading: false,
 				blogs: action.payload,
 			};
 		default:
