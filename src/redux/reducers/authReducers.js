@@ -1,4 +1,4 @@
-import { AUTH_TOGGLE, UPDATE_USER_DATA } from '../types/authTypes';
+import { LOGIN_USER, LOGOUT_USER } from '../types/authTypes';
 
 // Auth store
 const initialState = {
@@ -15,15 +15,17 @@ const initialState = {
  */
 export const authReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case AUTH_TOGGLE:
+		case LOGIN_USER:
 			return {
 				...state,
-				isAuthenticated: action.payload,
-			};
-		case UPDATE_USER_DATA:
-			return {
-				...state,
+				isAuthenticated: true,
 				userData: action.payload,
+			};
+		case LOGOUT_USER:
+			return {
+				...state,
+				isAuthenticated: false,
+				userData: null,
 			};
 		default:
 			return state;
