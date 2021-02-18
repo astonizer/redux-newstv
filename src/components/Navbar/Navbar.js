@@ -1,17 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import {
-	Avatar,
-	AppBar,
-	Toolbar,
-	IconButton,
-	Typography,
-} from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+import { Avatar, AppBar, Toolbar, Typography, Grid } from '@material-ui/core';
 
 import { useStyles } from './styles';
 import Auth from './Auth/Auth';
+import Search from '../Search/Search';
 
 function Navbar() {
 	const classes = useStyles();
@@ -21,25 +15,34 @@ function Navbar() {
 		<div className={classes.root}>
 			<AppBar position="static">
 				<Toolbar>
-					<IconButton
-						edge="start"
-						className={classes.menuButton}
-						color="inherit"
-						aria-label="menu"
-					>
-						<Menu />
-					</IconButton>
-					<Typography variant="h6" className={classes.title}>
-						Happy Blogging
-					</Typography>
-					{userData && (
-						<Avatar
-							src={userData?.imageUrl}
-							alt={userData?.givenName}
-						/>
-					)}
-					{userData?.givenName}
-					<Auth />
+					<Grid container>
+						<Grid item sm={4}>
+							<Typography variant="h6" className={classes.title}>
+								<span style={{ color: 'white' }}>
+									R<span style={{ color: 'pink' }}>edu</span>x
+								</span>{' '}
+								<span style={{ color: 'white' }}>
+									N<span style={{ color: 'pink' }}>ews</span>
+									TV
+								</span>
+							</Typography>
+						</Grid>
+						<Grid item sm={6}>
+							<Search />
+						</Grid>
+						<Grid item sm={1}>
+							{userData && (
+								<Avatar
+									src={userData?.imageUrl}
+									alt={userData?.givenName}
+								/>
+							)}
+							{userData?.givenName}
+						</Grid>
+						<Grid item sm={1}>
+							<Auth />
+						</Grid>
+					</Grid>
 				</Toolbar>
 			</AppBar>
 		</div>
