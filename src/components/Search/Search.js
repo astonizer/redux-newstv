@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { IconButton, InputBase, Paper } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
@@ -9,15 +10,16 @@ import { searchBlogs } from '../../redux/actions/feedActions';
 
 function Search() {
 	const classes = useStyles();
+	const dispatch = useDispatch();
 	const [search, setSearch] = useState('farmer');
 
 	const handleChange = e => {
 		setSearch(e.target.value);
 	};
 
-	const handleSubmit = e => {
+	const handleSubmit = async e => {
 		e.preventDefault();
-		searchBlogs(search);
+		dispatch(searchBlogs(search));
 	};
 
 	return (

@@ -26,7 +26,7 @@ export const feedReducer = (state = initialState, action) => {
 			return {
 				...state,
 				loading: false,
-				blogs: action.payload,
+				news: action.payload,
 			};
 		default:
 			return state;

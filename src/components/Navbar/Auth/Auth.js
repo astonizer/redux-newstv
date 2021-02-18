@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { GoogleLogout, GoogleLogin } from 'react-google-login';
 
 import { loginUser } from '../../../redux/actions/authActions';
@@ -7,7 +7,7 @@ import { logoutUser } from '../../../redux/actions/authActions';
 
 function Auth() {
 	const dispatch = useDispatch();
-	const isAuthenticated = useSelector(state => state.isAuthenticated);
+	// const isAuthenticated = useSelector(state => state.isAuthenticated);
 
 	const authenticateUser = res => {
 		dispatch(loginUser(res.profileObj));
