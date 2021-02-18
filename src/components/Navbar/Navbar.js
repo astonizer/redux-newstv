@@ -15,7 +15,12 @@ function Navbar() {
 		<div className={classes.root}>
 			<AppBar position="static">
 				<Toolbar>
-					<Grid container>
+					<Grid
+						container
+						direction="row"
+						justify="center"
+						alignItems="center"
+					>
 						<Grid item sm={4}>
 							<Typography variant="h6" className={classes.title}>
 								<span style={{ color: 'white' }}>
@@ -37,7 +42,6 @@ function Navbar() {
 									alt={userData?.givenName}
 								/>
 							)}
-							{userData?.givenName}
 						</Grid>
 						<Grid item sm={1}>
 							<Auth />

@@ -29,7 +29,7 @@ function Auth() {
 			{!isAuthenticated && (
 				<GoogleLogin
 					clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-					buttonText="Login with Google"
+					buttonText="Login"
 					onSuccess={authenticateUser}
 					onFailure={authenticateUser}
 					// isSignedIn={true}
