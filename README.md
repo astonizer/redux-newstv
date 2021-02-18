@@ -2,7 +2,7 @@
 
 News website to stay up-to-date with the current affairs built using React and Redux (Still in progress)
 <br>
-Also used (NewsAPI)[https://newsapi.org/] for fetching latest news.
+Also used [NewsAPI](https://newsapi.org/) for fetching latest news.
 
 <br>
 
