@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { Avatar, AppBar, Toolbar, Typography, Grid } from '@material-ui/core';
 
@@ -10,7 +11,6 @@ import Search from '../Search/Search';
 function Navbar() {
 	const classes = useStyles();
 	const userData = useSelector(state => state.auth.userData);
-
 	return (
 		<div className={classes.root}>
 			<AppBar position="static">
@@ -21,29 +21,43 @@ function Navbar() {
 						justify="center"
 						alignItems="center"
 					>
-						<Grid item sm={4}>
-							<Typography variant="h6" className={classes.title}>
-								<span style={{ color: 'white' }}>
-									R<span style={{ color: 'pink' }}>edu</span>x
-								</span>{' '}
-								<span style={{ color: 'white' }}>
-									N<span style={{ color: 'pink' }}>ews</span>
-									TV
-								</span>
-							</Typography>
+						<Grid item xs={12} sm={4}>
+							<Link to="/" className={classes.brandTitle}>
+								<Typography
+									variant="h6"
+									className={classes.title}
+								>
+									<span style={{ color: 'white' }}>
+										R
+										<span style={{ color: 'pink' }}>
+											edu
+										</span>
+										x
+									</span>{' '}
+									<span style={{ color: 'white' }}>
+										N
+										<span style={{ color: 'pink' }}>
+											ews
+										</span>
+										TV
+									</span>
+								</Typography>
+							</Link>
 						</Grid>
-						<Grid item sm={6}>
-							<Search />
-						</Grid>
-						<Grid item sm={1}>
-							{userData && (
+						{userData && (
+							<Grid item xs={12} sm={6}>
+								<Search />
+							</Grid>
+						)}
+						{userData && (
+							<Grid item xs={6} sm={6} md={1}>
 								<Avatar
 									src={userData?.imageUrl}
 									alt={userData?.givenName}
 								/>
-							)}
-						</Grid>
-						<Grid item sm={1}>
+							</Grid>
+						)}
+						<Grid item xs={6} sm={6} md={1}>
 							<Auth />
 						</Grid>
 					</Grid>

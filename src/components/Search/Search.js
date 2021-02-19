@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { IconButton, InputBase, Paper } from '@material-ui/core';
 import { SearchOutlined } from '@material-ui/icons';
@@ -11,8 +12,8 @@ import { searchBlogs } from '../../redux/actions/feedActions';
 function Search() {
 	const classes = useStyles();
 	const dispatch = useDispatch();
+	const history = useHistory();
 	const [search, setSearch] = useState('farmer');
-
 	const handleChange = e => {
 		setSearch(e.target.value);
 	};
@@ -20,6 +21,7 @@ function Search() {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		dispatch(searchBlogs(search));
+		history.push('/news');
 	};
 
 	return (

@@ -1,5 +1,9 @@
 # Redux NewsTV
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/52c4590b-b633-44b0-8752-0e76159989eb/deploy-status)](https://app.netlify.com/sites/redux-newstv/deploys)
+<br>
+[https://redux-newstv.netlify.app/](https://redux-newstv.netlify.app/)
+<br>
 News website to stay up-to-date with the current affairs built using React and Redux (Still in progress)
 <br>
 Also used [NewsAPI](https://newsapi.org/) for fetching latest news.

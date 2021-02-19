@@ -14,7 +14,6 @@ import { useStyles } from './styles';
 
 function News({ article }) {
 	const classes = useStyles();
-	console.log(article);
 	return (
 		<Grid item sm={12} md={4}>
 			<Card className={classes.root}>
