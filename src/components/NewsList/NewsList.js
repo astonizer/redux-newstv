@@ -14,7 +14,6 @@ function NewsList() {
 	const history = useHistory();
 	const classes = useStyles();
 	const [newsDetails, setNewsDetails] = useState();
-	console.log(newsDetails);
 	if (!isAuthenticated) history.push('/');
 
 	useEffect(() => {
