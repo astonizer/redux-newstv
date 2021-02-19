@@ -1,13 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://newsapi.org/v2/everything?';
-
-const config = {
-	'Access-Control-Allow-Origin': '*',
-};
+const URL = 'https://gnews.io/api/v4/search?';
 
 export const fetchNews = query =>
-	axios.get(
-		URL + `q=${query}&apiKey=${process.env.REACT_APP_NEWS_API}`,
-		config
-	);
+	axios.get(URL + `q=${query}&token=${process.env.REACT_APP_GNEWS_API}`);

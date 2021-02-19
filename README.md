@@ -4,9 +4,9 @@
 <br><br>
 [https://redux-newstv.netlify.app/](https://redux-newstv.netlify.app/)
 <br><br>
-News website to stay up-to-date with the current affairs built using React and Redux (Still in progress)
+News website to stay up-to-date with the current affairs built using React and Redux
 <br>
-Also used [NewsAPI](https://newsapi.org/) for fetching latest news.
+Also used [GNewsAPI](https://gnews.io/) for fetching latest news.
 
 <br>
 

@@ -20,9 +20,9 @@ function News({ article }) {
 				<CardActionArea>
 					<CardMedia
 						component="img"
-						alt="Contemplative Reptile"
+						alt={article.image}
 						height="200"
-						image={article.urlToImage}
+						image={article.image}
 						title={`Source: ${article.source.name}`}
 					/>
 					<CardContent>
