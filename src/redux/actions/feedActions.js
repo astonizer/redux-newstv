@@ -6,7 +6,6 @@ export const searchBlogs = query => async dispatch => {
 
 	try {
 		const data = await fetchNews(query);
-		console.log(data);
 		dispatch({ type: UPDATE_BLOGS, payload: data });
 	} catch (err) {
 		dispatch({ type: SEARCH_FAIL, payload: err.message });
